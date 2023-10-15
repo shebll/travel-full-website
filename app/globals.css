@@ -1,27 +1,74 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* /////////////////////////////// */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-green-600 transition-all;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-green-700;
+}
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply text-gray-900;
 }
+/* /////////////////////////////// */
+
+/* /////////////////////////////// */
+.btn {
+  @apply shadow-md rounded-full px-6 py-2 text-lg font-semibold transition-all;
+}
+.btn:is(:hover, :focus) {
+  @apply shadow-xl;
+}
+.btn.sec {
+  @apply bg-green-100 text-gray-900;
+}
+.btn.sec:is(:hover, :focus) {
+  @apply bg-green-200;
+}
+.btn.prim {
+  @apply bg-green-700 text-gray-100;
+}
+.btn.prim:is(:hover, :focus) {
+  @apply bg-green-900;
+}
+.link {
+  @apply text-gray-600 transition-all relative;
+}
+.link::before {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 7%;
+  background-color: rgb(15, 15, 15);
+  left: 0%;
+  bottom: 0px;
+  transition: 0.7s all;
+  -webkit-transition: 0.7s all;
+  -moz-transition: 0.7s all;
+  -ms-transition: 0.7s all;
+  -o-transition: 0.7s all;
+}
+.link:hover::before {
+  left: 100%;
+  width: 200%;
+}
+.link:is(:hover, :focus) {
+  @apply text-gray-900;
+}
+/* /////////////////////////////// */
