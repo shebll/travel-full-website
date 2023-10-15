@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import DropDownMenu from "../DropDownMenu/DropDownMenu";
 
 function Header() {
   return (
@@ -15,7 +16,7 @@ function Header() {
             quality={32}
           />
         </Link>
-        <div className="flex justify-between items-center gap-6 lg:gap-36">
+        <div className="flex justify-center items-center gap-6 lg:gap-36">
           <nav className="hidden lg:block">
             <ul className="flex justify-between items-center flex-row gap-4 text-lg font-medium">
               <li className="overflow-hidden">
@@ -49,16 +50,7 @@ function Header() {
             <button className="btn prim">Sign In</button>
             <button className="btn sec">Login</button>
           </div>
-          <nav className="block lg:hidden">
-            <button>
-              <Image
-                src={"/images/menu.svg"}
-                alt="menu"
-                height={30}
-                width={30}
-              />
-            </button>
-          </nav>
+          <DropDownMenu />
         </div>
       </div>
     </header>
