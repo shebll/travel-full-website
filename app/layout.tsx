@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Travel App",
   description: "Travel and explore countries",
+  icons: {
+    icon: "images/logo.svg",
+  },
 };
 
 export default function RootLayout({
