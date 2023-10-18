@@ -62,28 +62,27 @@ export default function Carousel() {
     active: { opacity: 0 },
   };
   return (
-    <div className="relative max-w-[1400px]">
+    <div className="relative max-w-[1400px] mx-10 xl:mx-0">
       <div
         className="flex flex-row transition-all ease-in-out duration-700 gap-[1%]   "
         style={{ transform: `translateX(-${current * 100 + current}%)` }}
       >
         {images.map((image, index) => (
-          <div key={index} className="relative">
-            <Image
-              className="rounded-[20px] w-[1400px] max-w-fit"
-              src={image.url}
-              alt={image.title}
-              width={1400}
-              height={1400}
-            />
-          </div>
+          <Image
+            key={index}
+            className="rounded-[20px]"
+            src={image.url}
+            alt={image.title}
+            width={1400}
+            height={700}
+          />
         ))}
       </div>
-      <div className="navigation absolute w-full h-full flex top-0 left-0 justify-between  ">
-        <button onClick={prev} className="font-bold text-zinc-50 text-4xl p-2">
+      <div className="navigation absolute w-full h-full flex top-0 left-[0px] justify-between  ">
+        <button onClick={prev} className="font-bold text-zinc-50 text-4xl p-6">
           &lt;
         </button>
-        <button onClick={next} className="font-bold text-zinc-50 text-4xl p-2">
+        <button onClick={next} className="font-bold text-zinc-50 text-4xl p-6">
           &gt;
         </button>
       </div>

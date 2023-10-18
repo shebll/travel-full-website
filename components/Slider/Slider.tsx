@@ -14,7 +14,7 @@ export default function Slider() {
           seeing the incorruptible beauty of nature. We can help you on an"
         />
       </div>
-      <div className="w-fit mx-auto">
+      <div className="  mx-auto">
         <Carousel />
       </div>
     </section>
