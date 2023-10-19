@@ -84,14 +84,30 @@ body {
   background-size: cover;
   background-position: 50%;
 }
-.i {
-  background: rgba(101, 101, 101, 0.12);
+.glassy {
+  background: rgb(114 114 114 / 22%);
   border-radius: 20px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgb(0 0 0 / 19%);
   backdrop-filter: blur(10.6px);
   -webkit-backdrop-filter: blur(10.6px);
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
+}
+.no-scroll {
+  overflow: hidden;
+}
+
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 6px; /* Adjust the height as needed */
+  background-color: #2c3c83; /* Progress bar color */
+  z-index: 999;
+}
+.card {
+  perspective: 1700px;
 }

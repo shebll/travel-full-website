@@ -1,9 +1,16 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 function DropDownMenu() {
   const [menuToggle, setMenuToggle] = useState<boolean>(false);
+  useEffect(() => {
+    if (menuToggle) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+  }, [menuToggle]);
   const clickHandle = () => {
     setMenuToggle((prev): boolean => {
       return !prev;
@@ -11,13 +18,19 @@ function DropDownMenu() {
   };
   return (
     <nav className="block lg:hidden">
+      {menuToggle && (
+        <div
+          onClick={clickHandle}
+          className="absolute inset-0 -z-10 h-screen trams bg-gray-500/50 top-[-10px] "
+        ></div>
+      )}
       <button test-id={"button"} onClick={clickHandle}>
         <Image src={"/images/menu.svg"} alt="menu" height={30} width={30} />
       </button>
       <nav
-        className={`absolute w-full flex flex-col p-6 justify-between ${
-          menuToggle ? "left-0" : "left-[100%]"
-        } top-[77px] bg-gray-300 h-[calc(100vh-77.4px)] transition-all`}
+        className={`absolute w-[99%] flex flex-col p-6 justify-between gap-20 bg-gray-200 rounded-2xl  ${
+          menuToggle ? "left-[50%] translate-x-[-50%]" : "left-[120%]"
+        } top-[77px] transition-all duration-500 ease-in-out`}
       >
         <ul className="flex h-full justify-start items-start flex-col gap-6 text-2xl font-medium">
           <li className="overflow-hidden">

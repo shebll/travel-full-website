@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "../components/Header/Header";
+import ScrollProgressBar from "@/components/scrollingHock/ScrollProgressBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`px-2 md:px-0 ${inter.className}`}>
         <Header />
+        <ScrollProgressBar />
         {children}
       </body>
     </html>

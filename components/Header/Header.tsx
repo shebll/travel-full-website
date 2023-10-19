@@ -1,21 +1,25 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import DropDownMenu from "../DropDownMenu/DropDownMenu";
+import useScrollingUp from "../scrollingHock/useScrollingUp";
+import useNearTopOfScreen from "../scrollingHock/useNearTopOfScreen";
 
 function Header() {
+  const scrollingUp = useScrollingUp();
+  const isNearTop = useNearTopOfScreen();
   return (
-    <header className="bg-white shadow-lg fixed top-0 left-0 w-full z-50">
-      <div className="px-2 md:px-0 container mx-auto flex justify-between items-center py-2">
-        <Link href="/" className="flex  items-center gap-6 ">
-          <Image
-            src={"/images/logo.svg"}
-            alt="logo icon"
-            width={60}
-            height={60}
-            priority
-            quality={80}
-          />
-          <h1 className="text-3xl font-bold block lg:hidden">TRAVEL</h1>
+    <header
+      className={`fixed transition-all left-0 w-full z-50        
+      ${scrollingUp ? "top-[1%]" : "top-[-10%]"} `}
+    >
+      <div
+        className={`px-8 max-w-[99%] rounded-3xl transition-all bg-gray-50 container mx-auto flex justify-between items-center py-2 ${
+          isNearTop ? "" : "bg-gray-800  mx-auto glassy "
+        } `}
+      >
+        <Link href="/" className="">
+          <h1 className="text-4xl font-bold py-2 ">TRAVEL X</h1>
         </Link>
         <div className="flex justify-center items-center gap-6 lg:gap-16">
           <nav className="hidden lg:block">
