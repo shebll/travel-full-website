@@ -31,7 +31,7 @@ const featureData = [
 ];
 export default function Feature() {
   return (
-    <section className="flex gap-[100px] container mx-auto pt-20">
+    <section className="flex gap-[100px] container mx-auto pt-20 bg-white">
       <div className="sticky top-0 h-screen w-full flex items-center">
         <div className="relative w-full rounded-[40px] aspect-square bg-gray-300 ">
           {featureData.map((feature, index) => (

@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 function TapsSection() {
   const [cardNum, setCardNum] = useState(0);
   const divRef = useRef<HTMLDivElement>(null);
+  const refDD = useRef<HTMLDivElement>(null);
   const divRef1 = useRef<HTMLDivElement>(null);
   const divRef2 = useRef<HTMLDivElement>(null);
   const divRef3 = useRef<HTMLDivElement>(null);
@@ -22,12 +23,19 @@ function TapsSection() {
     [0, 1],
     ["0%", "100%"]
   );
-  // if (scrollYProgressValue.current === "0%") {
-  //   console.log(scrollYProgressValue);
-  // }
+  const { scrollYProgress: s2 } = useScroll({
+    target: refDD,
+    offset: ["end start", "end end"],
+  });
+  const s22 = useTransform(s2, [1, 0], ["0px", "100px"]);
+  const s221 = useTransform(s2, [1, 0], ["100%", "92%"]);
 
   return (
-    <div className="  bg-blue-950/80 text-white rounded-3xl ">
+    <motion.div
+      ref={refDD}
+      style={{ borderRadius: s22, width: s221 }}
+      className="  bg-blue-950 text-white rounded-3xl mx-auto "
+    >
       <section className=" max-w-[1200px] mx-auto">
         <div className="flex gap-10">
           <div className="flex-1">
@@ -106,7 +114,7 @@ function TapsSection() {
           </div>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 }
 

@@ -5,10 +5,11 @@ import Feature from "@/components/Feature/Feature";
 import Card from "@/components/Card/Card";
 import TextAnimation from "@/components/TextAnimation/TextAnimation";
 import TapsSection from "@/components/TapsSection/TapsSection";
+import Footer from "@/components/footer/Footer";
 
 export default function Home() {
   return (
-    <main className="pt-[77px]">
+    <main className="pt-[77px] ">
       <Hero />
       <Card />
       <Slider />

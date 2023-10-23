@@ -15,8 +15,8 @@ export default function TextAnimation() {
       scrollTrigger: {
         trigger: divRef.current,
         start: "top center",
-        end: "bottom center",
-        markers: true,
+        end: "90% center",
+        markers: false,
         scrub: true,
       },
     });
@@ -45,7 +45,7 @@ export default function TextAnimation() {
     return body;
   };
   return (
-    <section className="container mx-auto">
+    <section className="container mx-auto bg-white">
       <div ref={divRef} className="h-[400vh] ">
         <div className="text-7xl sticky top-[0] left-0 h-screen ">
           <div className="relative w-full h-full flex items-center justify-center">

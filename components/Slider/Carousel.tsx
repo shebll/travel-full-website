@@ -62,7 +62,7 @@ export default function Carousel() {
     active: { opacity: 0 },
   };
   return (
-    <div className="relative max-w-[1400px] mx-10 xl:mx-0">
+    <div className="relative max-w-[1400px] mx-10 xl:mx-0 bg-white">
       <div
         className="flex flex-row transition-all ease-in-out duration-700 gap-[1%]   "
         style={{ transform: `translateX(-${current * 100 + current}%)` }}

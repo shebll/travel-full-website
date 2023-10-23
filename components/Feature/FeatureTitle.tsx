@@ -12,7 +12,7 @@ type props = {
 };
 function FeatureTitle({ title, paragraph, index, id }: props) {
   const textRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(textRef, { margin: "-30% 0% -70% 0%" });
+  const isInView = useInView(textRef, { margin: "-40% 0% -60% 0%" });
   const setFeatureInView = useFeatureStore((state) => state.setInViewFeature);
   const idFeatureInView = useFeatureStore((state) => state.inViewFeature);
   const paragraphArray = paragraph.split("..");

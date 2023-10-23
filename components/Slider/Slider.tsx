@@ -5,7 +5,7 @@ import Carousel from "./Carousel";
 
 export default function Slider() {
   return (
-    <section className="pt-[200px] h-fit">
+    <section className="pt-[200px] h-fit bg-white">
       <div className=" container mx-auto pb-[50px]">
         <Heading title="Explore <br /> more distentions" />
         <SubHeading

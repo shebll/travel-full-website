@@ -5,8 +5,8 @@ import SubHeading from "../SubHeading/SubHeading";
 
 function Hero() {
   return (
-    <div className="container mx-auto flex justify-between gap-28 py-[100px] flex-col xl:flex-row  items-center">
-      <div className="hero bottom-[-30%]"></div>
+    <div className="container mx-auto flex justify-between gap-28 py-[100px] flex-col xl:flex-row  items-center ">
+      <div className="hero bottom-[-30%] bg-white"></div>
       <div className="flex-1 flex gap-16  xl:gap-10 flex-col">
         <Heading
           title="Putuk Truno <br />
